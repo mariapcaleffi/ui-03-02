@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aumento de Preço</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Aumento de Preço de Mercadoria</h1>
+    <input type="text" id="nome" placeholder="Nome da Mercadoria">
+    <input type="number" id="preco" placeholder="Preço">
+    <button onclick="calcularAumento()">Calcular Aumento</button>
+    <p id="resultado"></p>
+
+<script>
+    function calcularAumento() {
+    let nome = document.getElementById('nome').value;
+    let preco = Number(document.getElementById('preco').value);
+    let aumento = 0;
+
+    if (preco < 1000) {
+        aumento = preco * 0.05;
+    } else {
+        aumento = preco * 0.07;
+    }
+
+    let novoPreco = preco + aumento;
+    document.getElementById('resultado').innerHTML = `Mercadoria: ${nome} <br> Novo Preço: R$ ${novoPreco.toFixed(2)}`;
+}
+</script>
+
+</body>
+</html>

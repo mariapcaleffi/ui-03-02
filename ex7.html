@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajuste Salarial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Cálculo de Reajuste Salarial</h1>
+    <input type="number" id="salarioAtual" placeholder="Salário Atual">
+    <button onclick="calcularReajuste()">Calcular Reajuste</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularReajuste() {
+    let salario = Number(document.getElementById('salarioAtual').value);
+    let aumento = 0;
+
+    if (salario >= 1500 && salario < 1750) {
+        aumento = salario * 0.15;
+    } else if (salario >= 1750 && salario < 2000) {
+        aumento = salario * 0.12;
+    } else if (salario >= 2000 && salario < 3000) {
+        aumento = salario * 0.09;
+    } else if (salario >= 3000) {
+        aumento = salario * 0.06;
+    }
+
+    let novoSalario = salario + aumento;
+    document.getElementById('resultado'). innerHTML = `Aumento: R$ ${aumento.toFixed(2)} <br> Novo Salário: R$ ${novoSalario.toFixed(2)}`;
+}
+    </script>
+</body>
+</html>

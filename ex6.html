@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior e Menor Número</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Maior e Menor Número</h1>
+    <input type="number" id="num1" placeholder="Número 1">
+    <input type="number" id="num2" placeholder="Número 2">
+    <button onclick="encontrarMaiorMenor()">Verificar</button>
+    <p id="resultado"></p>
+
+    <script>
+        function encontrarMaiorMenor() {
+    let num1 = Number(document.getElementById('num1').value);
+    let num2 = Number(document.getElementById('num2').value);
+    let maior = Math.max(num1, num2);
+    let menor = Math.min(num1, num2);
+    document.getElementById('resultado').innerHTML = `Maior: ${maior} <br> Menor: ${menor}`;
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior Número</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Maior Número Digitado</h1>
+    <input type="number" id="numero1" placeholder="Número 1">
+    <input type="number" id="numero2" placeholder="Número 2">
+    <input type="number" id="numero3" placeholder="Número 3">
+    <input type="number" id="numero4" placeholder="Número 4">
+    <input type="number" id="numero5" placeholder="Número 5">
+    <input type="number" id="numero6" placeholder="Número 6">
+    <button onclick="encontrarMaior()">Encontrar Maior</button>
+    <p id="resultado"></p>
+
+<script>
+    function encontrarMaior() {
+    let numeros = [
+        Number(document.getElementById('numero1').value),
+        Number(document.getElementById('numero2').value),
+        Number(document.getElementById('numero3').value),
+        Number(document.getElementById('numero4').value),
+        Number(document.getElementById('numero5').value),
+        Number(document.getElementById('numero6').value)
+    ];
+    let maior = Math.max(...numeros);
+    document.getElementById('resultado').innerHTML = `Maior Número: ${maior}`;
+}
+</script>
+
+</body>
+</html>

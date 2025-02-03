@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classificação de Triângulo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Classificação de Triângulo</h1>
+    <input type="number" id="ladoA" placeholder="Lado A">
+    <input type="number" id="ladoB" placeholder="Lado B">
+    <input type="number" id="ladoC" placeholder="Lado C">
+    <button onclick="classificarTriangulo()">Classificar</button>
+    <p id="resultado"></p>
+
+
+<script>
+    function classificarTriangulo() {
+    let a = Number(document.getElementById('ladoA').value);
+    let b = Number(document.getElementById('ladoB').value);
+    let c = Number(document.getElementById('ladoC').value);
+    let resultado = '';
+
+    if (a === b && b === c) {
+        resultado = 'EQUILÁTERO';
+    } else if (a !== b && b !== c && a !== c) {
+        resultado = 'ESCALENO';
+    } else {
+        resultado = 'ISÓSCELES';
+    }
+
+    document.getElementById('resultado').innerHTML = `Tipo de triângulo: ${resultado}`;
+}
+    </script>
+    
+</body>
+</html>

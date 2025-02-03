@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desconto em Vendas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Desconto em Vendas</h1>
+    <input type="text" id="produto" placeholder="Produto">
+    <input type="number" id="precoVenda" placeholder="Preço">
+    <button onclick="calcularDesconto()">Calcular Desconto</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularDesconto() {
+    let produto = document.getElementById('produto').value;
+    let preco = Number(document.getElementById('precoVenda').value);
+    let desconto = 0;
+
+    if (produto.toLowerCase() === 'camisa') {
+        desconto = preco * 0.20;
+    } else if (produto.toLowerCase() === 'bermuda') {
+        desconto = preco * 0.10;
+    } else if (produto.toLowerCase() === 'calça') {
+        desconto = preco * 0.15;
+    }
+
+    let precoFinal = preco - desconto;
+    document.getElementById('resultado').innerHTML = `Desconto: R$ ${desconto.toFixed(2)} <br> Preço Final: R$ ${precoFinal.toFixed(2)}`;
+}
+    </script>
+</body>
+</html>
